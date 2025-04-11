@@ -1,3 +1,28 @@
 {% extends "home.html" %}
+
 {% block title %}About Us{% endblock %}
-{% block content %} this is about {% endblock %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+<h1 class="cls">This is about</h1>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} 
+{% extends "home.html" %}
+{% block title %}About Us{% endblock %}
+{% block css %} <link rel="stylesheet" href="{% static 'css/style.css' %}">{% endblock  %}
+{% block content %} <h1 class='cls'>this is about </h1>{% endblock %} {% endcomment %}
