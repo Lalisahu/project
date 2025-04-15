@@ -1,34 +1,34 @@
 from django.shortcuts import render,redirect
+from .models import Student
 
 def home(request):
-    return render(request, 'home.html')  # Render the home.html template
+    return render(request, 'home.html')  
 
 
 def about(request):
-    return render(request, 'about.html')  # Render the about.html template
+    return render(request, 'about.html') 
 def contact(request):
-    return render(request, 'contact.html')  # Render the contact.html template
+    return render(request, 'contact.html')  
 def base(request):
-    return render(request, 'base.html')  # Render the base.html template
+    return render(request, 'base.html')  
 def registen(request):
-    return render(request, 'registen.html')  # Render the register.html template
+    return render(request, 'registen.html')  
     
     
 def registen_form(request):
     print("registen_form")
     print(request.POST)
     print(request.method)
-    print(request.Files)
+    print(request.FILES)
     username = request.POST.get('username')
     password = request.POST.get('password')
     email = request.POST.get('email')
     first_name = request.POST.get('first_name')
     last_name = request.POST.get('last_name')
     phone = request.POST.get('phone')
-    address = request.POST.get('address')
     dob = request.POST.get('dob')
-    print(username,password,email,first_name,last_name,phone,address,dob)
-
+    print(username,password,email,first_name,last_name,phone,dob)
+    Student.objects.create(student_name=username,student_email=email,student_phone=phone,student_dob=dob)
 
 
 
